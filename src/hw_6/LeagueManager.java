@@ -41,30 +41,30 @@ public class LeagueManager implements LeagueManagerInterface {
     }
 
     @Override
-    public SockerPlayer[] getAllPlayers() {
-        return players.toArray(new SockerPlayer[players.size()]);
+    public  ArrayList<SockerPlayer> getAllPlayers() {
+        return new ArrayList<SockerPlayer>(players);
     }
 
     @Override
-    public SockerPlayer[] getPlayers(League league) {
+    public  ArrayList<SockerPlayer> getPlayers(League league) {
         ArrayList<SockerPlayer> arrayOfLeague = new ArrayList<>();
         for (SockerPlayer player : players) {
             if (player.getLeague().equals(league)) {
                 arrayOfLeague.add(player);
             }
         }     
-        return arrayOfLeague.toArray(new SockerPlayer[arrayOfLeague.size()]);
+        return arrayOfLeague;
     }
 
     @Override
-    public SockerPlayer[] getPlayers(Country country) {
+    public  ArrayList<SockerPlayer> getPlayers(Country country) {
         ArrayList<SockerPlayer> arrayOfCountry = new ArrayList<>();
         for (SockerPlayer player : players) {
             if (player.getCountry().equals(country)) {
                 arrayOfCountry.add(player);
             }
         }
-        return arrayOfCountry.toArray(new SockerPlayer[arrayOfCountry.size()]);
+        return arrayOfCountry;
     }
 
     @Override

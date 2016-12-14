@@ -5,6 +5,7 @@
  */
 package hw_6;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -28,9 +29,9 @@ public class Hw_6 {
 
     private static void printData() {
         System.out.println("Вывод всех игроков");
-        SockerPlayer[] playersAll = leaguesM.getAllPlayers();
-        for (int i = 0; i < playersAll.length; i++) {
-            System.out.println(playersAll[i].toString());
+        ArrayList<SockerPlayer> playersAll = leaguesM.getAllPlayers();
+        for (int i = 0; i < playersAll.size(); i++) {
+            System.out.println(playersAll.get(i).toString());
         }
         printPlayerOfCountries();
         printPlayerOfLeagues();
@@ -47,9 +48,9 @@ public class Hw_6 {
         printPlayers(leaguesM.getPlayers(League.SECOND));
     }
 
-    private static void printPlayers(SockerPlayer[] players) {
-        for (int i = 0; i < players.length; i++) {
-            System.out.println(players[i].toString());
+    private static void printPlayers(ArrayList<SockerPlayer> players) {
+        for (int i = 0; i < players.size(); i++) {
+            System.out.println(players.get(i).toString());
         }
         System.out.println("");
     }
